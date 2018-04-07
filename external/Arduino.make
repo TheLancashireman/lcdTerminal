@@ -217,7 +217,7 @@ BOARDS_TXT  = $(ARDUINO_DIR)/hardware/arduino/$(ARDUINO_MCU)/boards.txt
 endif
 
 ifndef PARSE_BOARD
-PARSE_BOARD = ard-parse-boards --boards_txt=$(BOARDS_TXT)
+PARSE_BOARD = $(ARDUINO_BASE)/ard-parse-boards --boards_txt=$(BOARDS_TXT)
 endif
 
 # Which variant ? This affects the include path
@@ -434,7 +434,7 @@ $(OBJDIR)/%.sym: $(OBJDIR)/%.elf
 # Avrdude
 #
 ifndef AVRDUDE
-AVRDUDE          = $(ARDUINO_TOOLS_PATH)/avrdude
+AVRDUDE          = $(AVR_TOOLS_PATH)/avrdude
 endif
 
 AVRDUDE_COM_OPTS = -q -V -p $(MCU)
