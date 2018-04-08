@@ -1,0 +1,43 @@
+lcdTerminal design
+==================
+
+Hardware:
+=========
+
+  LCD display 4 lines x 20 characters
+  Arduino nano
+  Contrast potentionemeter (47k)
+  Backlight resistor (47R)
+
+  Connections between LCD and Arduino:
+    LCD                     Arduino
+    1  VSS                  GND
+    2  VDD                  5v
+    4  RS                   D2
+    5  R/W                  D3
+    6  E                    D4
+    7  DB0                  D5
+    8  DB1                  D6
+    9  DB2                  D7
+    10 DB3                  D8
+    11 DB4                  D9
+    12 DB5                  D10
+    13 DB6                  D11
+    14 DB7                  D12
+
+    Other LCD connections:
+    3  VO                   wiper of potentiometer 47k between 5v and gnd
+    15 + backlight          5V via 47R (possibly switched for variable brightnes
+    16 - backlight          GND
+
+  These connections allow the arduino to be connected directly to pins 4..14 of the LCD module.
+  The other pins are brought out by flying leads to veroboard.
+
+Software:
+=========
+
+  Use "LiquidCrystal" library for display
+  Store 4 lines of 20 characters to allow scrolling
+
+  See the .ino file for details of control character sequences.
+
